@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fresh homemade brownies — no maida, no sugar, pure ghee. Standard and Premium brownie boxes available by preorder.">
+  <title>Fresh Brownie | Homemade • Pure Ingredients • Preorder Only</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brown:#24150f; --brown2:#3b2116; --cream:#fff8ed; --gold:#f4b942;
+      --gold2:#ffcf67; --muted:#d8c9ba; --green:#68b95d; --white:#fff;
+      --shadow:0 24px 70px rgba(23,10,4,.24);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--brown);font-family:"DM Sans",system-ui,sans-serif}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:#17100c;color:#fff;padding:10px 20px;text-align:center;font-size:13px;letter-spacing:.04em}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(255,248,237,.92);backdrop-filter:blur(14px);border-bottom:1px solid #eadbc9}
+    .nav-inner{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:"Playfair Display",serif;font-size:25px;font-weight:800;display:flex;align-items:center;gap:9px}
+    .brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:28px;font-size:14px;font-weight:600}
+    .navlinks a:hover{color:#a76416}
+    .nav-cta{background:var(--brown);color:#fff;padding:11px 17px;border-radius:999px;font-weight:700;font-size:14px}
+    .hero{max-width:1180px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff0d0;color:#8b5517;border:1px solid #f2d39b;padding:8px 13px;border-radius:999px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(52px,7vw,88px);line-height:.94;margin:22px 0 18px;letter-spacing:-.04em}
+    h1 em{font-style:normal;color:#c17a20}
+    .hero-copy{font-size:18px;line-height:1.65;color:#6b5648;max-width:590px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    .badge{padding:10px 13px;background:#fff;border:1px solid #e9daca;border-radius:14px;font-size:13px;font-weight:700}
+    .badge b{color:#4c9b43}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:14px;font-weight:800}
+    .btn-primary{background:var(--brown);color:#fff;box-shadow:0 12px 25px rgba(36,21,15,.18)}
+    .btn-secondary{border:1.5px solid #d8c5b3;background:#fff}
+    .hero-image{position:relative}
+    .hero-image img{width:100%;display:block;border-radius:30px;box-shadow:var(--shadow);border:7px solid #fff}
+    .floating{position:absolute;right:-18px;bottom:28px;background:var(--brown);color:#fff;border:4px solid var(--cream);padding:17px 20px;border-radius:20px;box-shadow:0 14px 35px rgba(0,0,0,.22);font-weight:800}
+    .floating small{display:block;color:#f5cf7d;font-weight:600;margin-bottom:3px}
+    .section{padding:88px 24px}
+    .section.dark{background:var(--brown);color:#fff}
+    .wrap{max-width:1180px;margin:auto}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+    .section-head h2{font-family:"Playfair Display",serif;font-size:44px;margin:0 0 12px}
+    .section-head p{color:#7a6658;line-height:1.7;margin:0}
+    .dark .section-head p{color:#d4c2b3}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:27px;background:#fff;border:1px solid #eadccc;border-radius:22px}
+    .feature .icon{font-size:29px;margin-bottom:15px}
+    .feature h3{margin:0 0 8px;font-size:18px}
+    .feature p{margin:0;color:#766356;line-height:1.6;font-size:14px}
+    .dark .feature{background:#332018;border-color:#52372a}
+    .dark .feature p{color:#cfbfb2}
+    .pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:900px;margin:auto}
+    .price-card{background:#fff;border:1px solid #eadccc;border-radius:26px;padding:30px;position:relative;overflow:hidden}
+    .price-card.premium{border:2px solid var(--gold);transform:translateY(-7px)}
+    .ribbon{position:absolute;top:18px;right:-34px;transform:rotate(35deg);background:var(--gold);padding:7px 40px;font-size:11px;font-weight:900}
+    .price-card h3{font-family:"Playfair Display",serif;font-size:30px;margin:0 0 7px}
+    .price{font-size:45px;font-weight:900;margin:10px 0 2px}
+    .price small{font-size:15px;font-weight:600;color:#806d5d}
+    .price-card p{color:#756255;line-height:1.6}
+    .price-card ul{padding:0;margin:20px 0;list-style:none;display:grid;gap:11px}
+    .price-card li{font-size:14px}.price-card li:before{content:"✓";color:#4c9b43;font-weight:900;margin-right:8px}
+    .order{background:linear-gradient(135deg,#fff0d0,#fff9f0);border:1px solid #efd4a6;border-radius:30px;padding:45px;text-align:center}
+    .order h2{font-family:"Playfair Display",serif;font-size:42px;margin:0 0 10px}
+    .order p{color:#6f5b4d;max-width:650px;margin:0 auto 24px;line-height:1.7}
+    footer{background:#160d09;color:#cbb8aa;padding:35px 24px}
+    .footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer strong{color:#fff;font-family:"Playfair Display",serif;font-size:20px}
+    .mobile-menu{display:none}
+    @media(max-width:820px){
+      .navlinks{display:none}.mobile-menu{display:block}
+      .hero{grid-template-columns:1fr;padding-top:42px;gap:35px}
+      .features{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .price-card.premium{transform:none}
+      .footer-inner{flex-direction:column;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">🍫 Freshly made at home • No storage • Preorders only</div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">Fresh <span>Brownie</span></a>
+      <div class="navlinks">
+        <a href="#why">Why us</a><a href="#menu">Menu</a><a href="#order">Order</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/919848637510?text=Hi%2C%20I%27d%20like%20to%20preorder%20Fresh%20Brownies." target="_blank" rel="noopener">WhatsApp Order</a>
+      <span class="mobile-menu">☰</span>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">✨ Homemade • Premium Ingredients</span>
+        <h1>Fresh<br><em>Brownies</em><br>made with love.</h1>
+        <p class="hero-copy">A rich, fudgy brownie made fresh at home with carefully chosen ingredients. No maida. No refined sugar. Pure ghee. Perfect for kids, gifting and special moments.</p>
+        <div class="badges">
+          <div class="badge">🌿 <b>No Maida</b></div>
+          <div class="badge">🍃 <b>No Sugar</b></div>
+          <div class="badge">💚 <b>Pure Veg</b></div>
+          <div class="badge">🧈 <b>Pure Ghee</b></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#menu">View Brownies →</a>
+          <a class="btn btn-secondary" href="tel:+919848637510">📞 98486 37510</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/brownie-poster.jpg" alt="Fresh homemade brownies with dry fruits and chocolate coating">
+        <div class="floating"><small>PREMIUM VERSION</small>Rich • Fudgy • Fresh</div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Simple ingredients. Big taste.</h2>
+          <p>Made in small batches so every box feels fresh, homemade and special.</p>
+        </div>
+        <div class="features">
+          <article class="feature"><div class="icon">🌿</div><h3>No Maida</h3><p>Made without maida, keeping the ingredient list simple and intentional.</p></article>
+          <article class="feature"><div class="icon">🍃</div><h3>No Sugar</h3><p>No added refined sugar — a brownie made with a different approach to sweetness.</p></article>
+          <article class="feature"><div class="icon">🧈</div><h3>Pure Ghee</h3><p>Prepared with pure ghee and quality ingredients for a rich homemade taste.</p></article>
+          <article class="feature"><div class="icon">🥜</div><h3>Dry Fruits</h3><p>Premium version comes with a generous dry-fruit topping for extra texture and richness.</p></article>
+          <article class="feature"><div class="icon">👩‍🍳</div><h3>Fresh at Home</h3><p>Small-batch preparation means we make it for your preorder rather than storing it.</p></article>
+          <article class="feature"><div class="icon">🎁</div><h3>Made for Moments</h3><p>A thoughtful option for family treats, gifting and special occasions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="menu">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Choose your brownie.</h2>
+          <p>Both options are half-kilogram boxes. Premium adds ganache coating and dry fruits.</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <h3>Standard</h3><div class="price">₹600 <small>/ ½ kg</small></div>
+            <p>A freshly prepared homemade brownie box for everyday indulgence.</p>
+            <ul><li>No maida</li><li>No added refined sugar</li><li>Pure ghee</li><li>Freshly prepared</li></ul>
+            <a class="btn btn-primary" style="width:100%" href="https://wa.me/919848637510?text=Hi%2C%20I%27d%20like%20to%20preorder%20a%20Standard%20Brownie%20%28%C2%BD%20kg%29%20for%20%E2%82%B9600." target="_blank" rel="noopener">Preorder Standard</a>
+          </article>
+          <article class="price-card premium">
+            <div class="ribbon">PREMIUM</div>
+            <h3>Premium</h3><div class="price">₹650 <small>/ ½ kg</small></div>
+            <p>Our richer version with ganache coating and dry fruits.</p>
+            <ul><li>Everything in Standard</li><li>Chocolate ganache coating</li><li>Premium dry-fruit topping</li><li>Perfect for gifting</li></ul>
+            <a class="btn btn-primary" style="width:100%" href="https://wa.me/919848637510?text=Hi%2C%20I%27d%20like%20to%20preorder%20a%20Premium%20Brownie%20%28%C2%BD%20kg%29%20for%20%E2%82%B9650." target="_blank" rel="noopener">Preorder Premium</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <div class="wrap">
+        <div class="order">
+          <h2>Fresh means preorder.</h2>
+          <p>We don't store finished brownies. Tell us what you need, and we'll prepare your batch fresh at home. For orders and availability, contact us on WhatsApp or call.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="https://wa.me/919848637510?text=Hi%2C%20I%27d%20like%20to%20place%20a%20brownie%20preorder." target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+919848637510">📞 Call 98486 37510</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>Fresh Brownie</strong><br><small>Homemade • Fresh • Made with Love</small></div>
+      <div>© 2026 Fresh Brownie · Preorders only</div>
+    </div>
+  </footer>
+</body>
+</html>
